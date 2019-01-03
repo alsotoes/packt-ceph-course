@@ -1,0 +1,14 @@
+---
+- hosts: packt-cephcluster
+  remote_user: root
+  become: no
+  gather_facts: false
+  become_method: sudo
+  tasks:
+    - name: "Cluster /etc/dhclient-enter-hooks file"
+      copy:
+        src: "files/dhclient-enter-hooks"
+        dest: /etc/dhclient-enter-hooks
+        owner: root
+        group: root
+        mode: u=rw,g=r,o=r

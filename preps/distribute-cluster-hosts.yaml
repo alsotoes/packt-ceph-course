@@ -1,0 +1,14 @@
+---
+- hosts: packt-all
+  remote_user: root
+  become: no
+  gather_facts: false
+  become_method: sudo
+  tasks:
+    - name: "Cluster /etc/hosts file"
+      copy:
+        src: "files/cluster-hosts"
+        dest: /etc/hosts
+        owner: root
+        group: root
+        mode: u=rw,g=r,o=r

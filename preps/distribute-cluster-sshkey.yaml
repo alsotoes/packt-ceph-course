@@ -1,0 +1,20 @@
+---
+- hosts: packt-all
+  remote_user: root
+  become: no
+  gather_facts: false
+  become_method: sudo
+  tasks:
+  - name: make direcotry
+    file:
+      path: "/root/.ssh"
+      state: directory
+  - name: create empty file
+    file:
+      path: "/root/.ssh/authorized_keys"
+      state: touch
+  - name: Set authorized key taken from file
+    authorized_key:
+      user: root
+      state: present
+      key: "{{ lookup('file', 'files/cephkey.pub') }}"

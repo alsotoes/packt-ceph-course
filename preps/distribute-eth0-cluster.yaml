@@ -1,0 +1,16 @@
+---
+- hosts: packt-cephcluster
+  remote_user: root
+  become: no
+  gather_facts: false
+  become_method: sudo
+  tasks:
+    - name: "Primary interface all cluster"
+      copy:
+        src: "files/ifcfg-eth0-all"
+        dest: /etc/sysconfig/network-scripts/ifcfg-eth0
+        owner: root
+        group: root
+        mode: u=rw,g=r,o=r
+    - name: Restart Network
+      service: name=network state=restarted

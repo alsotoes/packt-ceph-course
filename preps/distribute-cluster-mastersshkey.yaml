@@ -1,0 +1,15 @@
+---
+- hosts: ceph00-ansible
+  remote_user: root
+  become: no
+  gather_facts: false
+  become_method: sudo
+  tasks:
+    - file: path=/root/.ssh/id_rsa state=absent
+    - name: "Cluster /etc/hosts file"
+      copy:
+        src: "files/cephkey"
+        dest: /root/.ssh/id_rsa
+        owner: root
+        group: root
+        mode: 0600

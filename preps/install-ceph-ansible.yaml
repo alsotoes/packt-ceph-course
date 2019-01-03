@@ -1,0 +1,18 @@
+---
+- hosts: ceph00-ansible
+  remote_user: root
+  become: no
+  gather_facts: false
+  become_method: sudo
+  tasks:
+    - name: "Copy ceph-ansible rpm file"
+      copy:
+        src: "files/rpms/ceph-ansible-2.1.1-4.fc28.noarch.rpm"
+        dest: /tmp/ceph-ansible-2.1.1-4.fc28.noarch.rpm
+        owner: root
+        group: root
+        mode: u=rw,g=r,o=r
+    - name: "Install ceph-ansible package"
+      yum:
+        name: /tmp/ceph-ansible-2.1.1-4.fc28.noarch.rpm
+        state: present

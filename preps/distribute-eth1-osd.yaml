@@ -1,0 +1,16 @@
+---
+- hosts: packt-cephosd
+  remote_user: root
+  become: no
+  gather_facts: false
+  become_method: sudo
+  tasks:
+    - name: "Second interface OSD nodes"
+      copy:
+        src: "files/ifcfg-eth1-osd"
+        dest: /etc/sysconfig/network-scripts/ifcfg-eth1
+        owner: root
+        group: root
+        mode: u=rw,g=r,o=r
+    - name: Restart Network
+      service: name=network state=restarted
