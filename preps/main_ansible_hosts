@@ -1,0 +1,17 @@
+[packt-admin]
+ceph00-ansible
+
+[packt-cephmon]
+ceph0[1:3]-mon
+
+[packt-cephosd]
+ceph0[1:4]-osd
+
+[packt-cephcluster]
+ceph0[1:3]-mon
+ceph0[1:4]-osd
+
+[packt-all]
+ceph00-ansible
+ceph0[1:3]-mon
+ceph0[1:4]-osd

@@ -1,0 +1,10 @@
+---
+- import_playbook: distribute-dhclient-enter-hooks.yaml
+- import_playbook: distribute-eth0-cluster.yaml
+- import_playbook: distribute-eth1-osd.yaml
+- import_playbook: distribute-cluster-hosts.yaml
+- import_playbook: distribute-cluster-sshkey.yaml
+- import_playbook: distribute-cluster-mastersshkey.yaml
+#- import_playbook: setup_epel.yaml
+- import_playbook: install-ceph-ansible.yaml
+- import_playbook: upgrade-systems.yaml
