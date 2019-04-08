@@ -3,13 +3,13 @@
 
 ### CephCourse Lab
 # Ansible
-192.168.100.191 	ceph00-ansible ceph00-ansible.localdomain
+192.168.102.191 	ceph00-ansible ceph00-ansible.localdomain
 # MON
-192.168.100.159 	ceph01-mon ceph01-mon.localdomain
-192.168.100.209 	ceph02-mon ceph02-mon.localdomain
-192.168.100.208 	ceph03-mon ceph03-mon.localdomain
+192.168.102.158 	ceph01-mon ceph01-mon.localdomain
+192.168.102.209 	ceph02-mon ceph02-mon.localdomain
+192.168.102.208 	ceph03-mon ceph03-mon.localdomain
 # OSD
-192.168.100.194 	ceph01-osd ceph01-osd.localdomain
-192.168.100.218 	ceph02-osd ceph02-osd.localdomain
-192.168.100.147 	ceph03-osd ceph03-osd.localdomain
-192.168.100.199 	ceph04-osd ceph04-osd.localdomain
+192.168.102.194 	ceph01-osd ceph01-osd.localdomain
+192.168.102.218 	ceph02-osd ceph02-osd.localdomain
+192.168.102.147 	ceph03-osd ceph03-osd.localdomain
+192.168.102.199 	ceph04-osd ceph04-osd.localdomain

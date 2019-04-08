@@ -16,3 +16,11 @@
       yum:
         name: /tmp/ceph-ansible-2.1.1-4.fc28.noarch.rpm
         state: present
+    - name: ensure a list of packages installed
+      yum:
+        name: "{{ packages }}"
+      vars:
+        packages:
+        - git
+        - wget
+        - mlocate
