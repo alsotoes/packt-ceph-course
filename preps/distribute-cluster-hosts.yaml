@@ -12,11 +12,3 @@
         owner: root
         group: root
         mode: u=rw,g=r,o=r
-    - name: "Cluster /etc/ansible/hosts file"
-      copy:
-        src: "files/main_ansible_hosts"
-        dest: /etc/ansible/hosts
-        owner: root
-        group: root
-        mode: u=rw,g=r,o=r
-

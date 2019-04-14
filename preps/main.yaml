@@ -3,10 +3,10 @@
 - import_playbook: distribute-eth0-cluster.yaml
 - import_playbook: distribute-eth1-osd.yaml
 - import_playbook: distribute-cluster-hosts.yaml
-- import_playbook: distribute-ansible-hosts.yaml
 - import_playbook: distribute-cluster-sshkey.yaml
 - import_playbook: distribute-cluster-mastersshkey.yaml
 - import_playbook: install-pkgs.yaml
 - import_playbook: install-pkgs-all.yaml
 - import_playbook: install-ceph-ansible.yaml
+- import_playbook: distribute-ansible-hosts.yaml
 - import_playbook: upgrade-systems.yaml
