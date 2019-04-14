@@ -7,20 +7,12 @@
   tasks:
     - name: "Copy ceph-ansible rpm file"
       copy:
-        src: "files/rpms/ceph-ansible-2.1.1-4.fc28.noarch.rpm"
-        dest: /tmp/ceph-ansible-2.1.1-4.fc28.noarch.rpm
+        src: "files/rpms/ceph-ansible-2.2.10-38.g7ef908a.el7.noarch.rpm"
+        dest: /tmp/ceph-ansible-2.2.10-38.g7ef908a.el7.noarch.rpm
         owner: root
         group: root
         mode: u=rw,g=r,o=r
     - name: "Install ceph-ansible package"
       yum:
-        name: /tmp/ceph-ansible-2.1.1-4.fc28.noarch.rpm
+        name: /tmp/ceph-ansible-2.2.10-38.g7ef908a.el7.noarch.rpm
         state: present
-    - name: ensure a list of packages installed
-      yum:
-        name: "{{ packages }}"
-      vars:
-        packages:
-        - git
-        - wget
-        - mlocate

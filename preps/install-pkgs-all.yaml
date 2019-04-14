@@ -1,0 +1,15 @@
+---
+- hosts: packt-all
+  remote_user: root
+  become: no
+  gather_facts: false
+  become_method: sudo
+  tasks:
+    - name: ensure a list of packages installed
+      yum:
+        name: "{{ packages }}"
+      vars:
+        packages:
+        - firewalld
+        - ntp
+        - ntpdate

@@ -1,0 +1,17 @@
+---
+- hosts: ceph00-ansible
+  remote_user: root
+  become: no
+  gather_facts: false
+  become_method: sudo
+  tasks:
+    - name: ensure a list of packages installed
+      yum:
+        name: "{{ packages }}"
+      vars:
+        packages:
+        - git
+        - wget
+        - mlocate
+        - python-netaddr
+        - python2-pip
